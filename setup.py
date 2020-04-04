@@ -1,17 +1,17 @@
-"""The python wrapper for IQ Option API package setup."""
+"""The python wrapper for Binary Option API package setup."""
 from setuptools import (setup, find_packages)
 
 
 setup(
-    name="iqoptionapi",
-    version="6.8.9.1",
+    name="binarybotapi",
+    version="1.0.0",
     packages=find_packages(),
-    install_requires=["pylint","requests","websocket-client==0.56"],
+    install_requires=["pylint","requests","websocket-client"],
     include_package_data = True,
-    description="Best IQ Option API for python",
-    long_description="Best IQ Option API for python",
-    url="https://github.com/Lu-Yi-Hsun/iqoptionapi",
-    author="Lu-Yi-Hsun",
-    author_email="yihsun1992@gmail.com",
+    description="Binary Option API for IQOption in python",
+    long_description="Binary Option API for IQOption in python",
+    url="https://github.com/vish4mi/binarybotapi",
+    author="Vishal Bhadade",
+    author_email="vishal.bhadade@gmail.com",
     zip_safe=False
 )
