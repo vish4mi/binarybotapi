@@ -144,6 +144,7 @@ class IQOptionAPI(object):  # pylint: disable=too-many-instance-attributes
     user_profile_client=None
     leaderboard_userinfo_deals_client=None
     users_availability=None
+    resultInfo = None
     # ------------------
 
     def __init__(self, host, username, password, proxies=None):

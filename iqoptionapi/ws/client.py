@@ -308,6 +308,8 @@ class WebsocketClient(object):
             self.api.leaderboard_userinfo_deals_client=message["msg"]
         elif message["name"]=="users-availability":
             self.api.users_availability=message["msg"]
+        elif message["name"] == "socket-option-closed":
+            self.api.resultInfo = message["msg"]
         else:
             pass
         global_value.ssl_Mutual_exclusion=False

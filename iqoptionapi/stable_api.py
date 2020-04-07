@@ -770,6 +770,7 @@ class IQ_Option:
 
         self.api.buy_multi_option = {}
         self.api.buy_successful = None
+        self.api.resultInfo = None
         req_id = "buyraw"
         try:
             self.api.buy_multi_option[req_id]["id"] = None
@@ -801,6 +802,7 @@ class IQ_Option:
     def buy(self, price, ACTIVES, ACTION, expirations):
         self.api.buy_multi_option = {}
         self.api.buy_successful = None
+        self.api.resultInfo = None
         req_id = "buy"
         try:
             self.api.buy_multi_option[req_id]["id"] = None
@@ -1416,7 +1418,15 @@ class IQ_Option:
     def get_users_availability(self, user_id):
         self.api.users_availability = None
 
-        while self.api.users_availability == None:
+        while self.api.users_availability is None:
             self.api.Get_Users_Availability(user_id)
             time.sleep(0.2)
         return self.api.users_availability
+
+    def get_trade_result(self):
+        while True:
+            if self.api.resultInfo is None:
+                print("Checking result")
+                continue
+            else:
+                return self.api.resultInfo
