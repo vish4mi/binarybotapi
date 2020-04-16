@@ -259,7 +259,7 @@ class IQ_Option:
             binaryOptionData = binary_data.get(option)
             if binaryOptionData is not None:
                 for actives_id in binaryOptionData.get("actives"):
-                    active = actives_id.get(actives_id)
+                    active = binaryOptionData.get("actives").get(actives_id)
                     if active is not None:
                         dottedName = str(active.get("name"))
                         if dottedName is not None:
