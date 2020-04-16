@@ -32,7 +32,7 @@ python setup.py install
 
 ```python
 import time
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 I_want_money=IQ_Option("email","password")
 I_want_money.connect()#connect to iqoption
 goal="EURUSD"
@@ -43,7 +43,7 @@ print(I_want_money.get_candles(goal,60,111,time.time()))
 ## Import
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 ```
 ## Login
 
@@ -54,7 +54,7 @@ if connect sucess return True,None
 if connect fail return False,reason
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 import logging
 
 logging.basicConfig(level=logging.DEBUG,format='%(asctime)s %(message)s')
@@ -76,7 +76,7 @@ some time connect will close so this way can check connect and reconnect
 try close your network and restart network in this sample
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 error_password="""{"code":"invalid_credentials","message":"You entered the wrong credentials. Please check that the login/password is correct."}"""
 iqoption = IQ_Option("email", "password")
 check,reason=iqoption.connect()
@@ -107,7 +107,7 @@ else:
 Default User-Agent is "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36"
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 import logging
 logging.basicConfig(level=logging.DEBUG,format='%(asctime)s %(message)s')
  
@@ -126,7 +126,7 @@ I_want_money.connect()#connect to iqoption
 ## Check version
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 print(IQ_Option.__version__)
 ```
 

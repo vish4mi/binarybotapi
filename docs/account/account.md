@@ -26,7 +26,7 @@ I_want_money.get_currency()
 reset practice balance to $10000
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 I_want_money=IQ_Option("email","password")
 I_want_money.connect()#connect to iqoption
 print(I_want_money.reset_practice_balance())
@@ -45,7 +45,7 @@ I_want_money.change_balance(MODE)
  
 ### sample
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 import logging
 import time
  
@@ -130,7 +130,7 @@ I_want_money.pop_live_deal(name,active,_type)
 
 ### sample 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 import logging
 import time
  

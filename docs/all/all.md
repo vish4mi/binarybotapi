@@ -15,7 +15,7 @@ DICT["forex"/"cfd"/"crypto"/"digital"/"turbo"/"binary"][Asset Name]["open"]
 it will return True/False
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 import logging
 import random
 logging.basicConfig(level=logging.DEBUG,format='%(asctime)s %(message)s')
@@ -54,7 +54,7 @@ I_want_money.update_ACTIVES_OPCODE()
 ## get_async_order()
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 import logging
 import time
 #logging.basicConfig(level=logging.DEBUG,format='%(asctime)s %(message)s')
@@ -119,7 +119,7 @@ Sample code
 
 ```python
 import time
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 I_want_money=IQ_Option("email","password")
 I_want_money.connect()#connect to iqoption
 #instrument_type: "binary-option"/"turbo-option"/"digital-option"/"crypto"/"forex"/"cfd"
@@ -150,7 +150,7 @@ while True:
 
 instrument_type="binary-option"/"digital-option"/"forex"/"cfd"/"crypto"
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 import logging
 import time
 #logging.basicConfig(level=logging.DEBUG,format='%(asctime)s %(message)s')
@@ -197,7 +197,7 @@ I_want_money.unsubscribe_top_assets_updated(instrument_type)
 
 #### sample 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 import logging
 import time
 import operator
@@ -245,7 +245,7 @@ I_want_money.unsubscribe_top_assets_updated(instrument_type)
 Get leader board data
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 I_want_money=IQ_Option(email,password)
 I_want_money.connect()#connect to iqoption
  

@@ -10,7 +10,7 @@ buy the binary option
 sample
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 import logging
 import time
 logging.basicConfig(level=logging.DEBUG,format='%(asctime)s %(message)s')
@@ -41,7 +41,7 @@ I_want_money.buy(Money,ACTIVES,ACTION,expirations)
 ### buy_multi()
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 I_want_money=IQ_Option("email","password")
 I_want_money.connect()#connect to iqoption
 Money=[]
@@ -82,7 +82,7 @@ I_want_money.buy_by_raw_expirations(price, active, direction, option,expired)
 
 purchase time=remaning time - 30
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 I_want_money=IQ_Option("email","password")
 I_want_money.connect()#connect to iqoption
 Money=1
@@ -105,7 +105,7 @@ I_want_money.sell_option(sell_all)#input int or list order id
 Sample
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 import time
 print("login...")
 I_want_money=IQ_Option("email","password")
@@ -132,7 +132,7 @@ It will do loop until get win or loose
 ### check_win()
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 I_want_money=IQ_Option("email","password")
 I_want_money.connect()#connect to iqoption
 check,id = I_want_money.buy(1, "EURUSD", "call", 1)
@@ -150,7 +150,7 @@ I_want_money.check_win(23243221)
 ### check_win_v2()
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 I_want_money=IQ_Option("email","password")
 I_want_money.connect()#connect to iqoption
 check,id = I_want_money.buy(1, "EURUSD", "call", 1)
@@ -164,7 +164,7 @@ print(I_want_money.check_win_v2(id,polling_time))
 great way
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 I_want_money=IQ_Option("email","password")
 I_want_money.connect()#connect to iqoption
 check,id = I_want_money.buy(1, "EURUSD", "call", 1)
@@ -177,7 +177,7 @@ print(I_want_money.check_win_v3(id))
 
 sample
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 print("login...")
 I_want_money=IQ_Option("email","password")
 I_want_money.connect()#connect to iqoption
@@ -199,7 +199,7 @@ I_want_money.get_all_init()
 sample
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 print("login...")
 I_want_money=IQ_Option("email","password")
 I_want_money.connect()#connect to iqoption
@@ -243,7 +243,7 @@ you can get the option by this function
 
 ```python
 import time
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 I_want_money=IQ_Option("email","password")
 I_want_money.connect()#connect to iqoption
 while True:
@@ -265,7 +265,7 @@ print(I_want_money.get_option_open_by_other_pc())
 ### sample 
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 I_want_money=IQ_Option("email","password")
 I_want_money.connect()#connect to iqoption
 goal="EURUSD"

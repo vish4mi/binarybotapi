@@ -1,6 +1,6 @@
 import unittest
 import os
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 import logging
 logging.basicConfig(level=logging.DEBUG,format='%(asctime)s %(message)s')
  

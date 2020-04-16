@@ -15,7 +15,7 @@ I_want_money.get_candles(ACTIVES,interval,count,endtime)
 ### sample 
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 import time
 I_want_money=IQ_Option("email","password")
 I_want_money.connect()#connect to iqoption
@@ -35,7 +35,7 @@ print(ANS)
 ```python
 
 from talib.abstract import *
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 import time
 import numpy as np
 print("login...")
@@ -77,7 +77,7 @@ I_want_money.stop_candles_stream(goal,size)
 ### Sample
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 import logging
 import time
 #logging.basicConfig(level=logging.DEBUG,format='%(asctime)s %(message)s')

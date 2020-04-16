@@ -19,10 +19,10 @@ only support US Dollar account
 https://github.com/Lu-Yi-Hsun/iqoptionapi/issues/73#issue-406537365
 
 ```python
-#hight level api ,This api is write base on ""iqoptionapi.api" for more easy
-from iqoptionapi.stable_api import IQ_Option
+#hight level api ,This api is write base on ""binarybotapi.api" for more easy
+from binarybotapi.stable_api import IQ_Option
 #low level api
-from iqoptionapi.api import IQOptionAPI
+from binarybotapi.api import IQOptionAPI
 ```
 ```bash
 .
@@ -75,7 +75,7 @@ python setup.py install
 ## Littile sample
 ```python
 import time
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 I_want_money=IQ_Option("email","password")
 goal="EURUSD"
 print("get candles")
@@ -88,7 +88,7 @@ print(I_want_money.get_candles(goal,60,111,time.time()))
 
 ### Import 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 ```
 ---
 ### Debug mode on
@@ -131,7 +131,7 @@ some time connect will close so this way can check connect and reconnect
 try close your network and restart network in this sample
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 import logging
 import time
 logging.basicConfig(level=logging.DEBUG,format='%(asctime)s %(message)s')
@@ -152,7 +152,7 @@ while True:
 ### Check version
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 print(IQ_Option.__version__)
 ```
 ### <a id=checkconnect> Check connect</a>
@@ -182,7 +182,7 @@ DICT["forex"/"cfd"/"crypto"/"digital"/"turbo"/"binary"][Asset Name]["open"]
 it will return True/False
  
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 import logging
 import random
 logging.basicConfig(level=logging.DEBUG,format='%(asctime)s %(message)s')
@@ -211,7 +211,7 @@ for type_name, data in ALL_Asset.items():
 ### View all ACTIVES Name
 you will get right all ACTIVES and code
 
-[ACTIVES](iqoptionapi/constants.py)
+[ACTIVES](binarybotapi/constants.py)
 
 ```python
 print(I_want_money.get_all_ACTIVES_OPCODE())
@@ -228,7 +228,7 @@ this api can work for option&digital&Forex&Stock&Commodities&Crypto&ETFs
 get the order data by id 
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 import logging
 import time
 #logging.basicConfig(level=logging.DEBUG,format='%(asctime)s %(message)s')
@@ -295,7 +295,7 @@ Sample code
 
 ```python
 import time
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 I_want_money=IQ_Option("email","password")
 #instrument_type: "binary-option"/"turbo-option"/"digital-option"/"crypto"/"forex"/"cfd"
 instrument_type=["binary-option","turbo-option","digital-option","crypto","forex","cfd"]
@@ -324,7 +324,7 @@ while True:
 
 Sample
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 import logging
 import time
 logging.basicConfig(level=logging.DEBUG,format='%(asctime)s %(message)s')
@@ -356,7 +356,7 @@ I_want_money.buy(Money,ACTIVES,ACTION,expirations)
 
 Sample
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 I_want_money=IQ_Option("email","password")
 Money=[]
 ACTIVES=[]
@@ -385,7 +385,7 @@ print(I_want_money.check_win_v2(id_list[0]))
 purchase time=remaning time - 30
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 I_want_money=IQ_Option("email","password")
 Money=1
 ACTIVES="EURUSD"
@@ -408,7 +408,7 @@ I_want_money.sell_option(sell_all)#input int or list
 Sample
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 import time
 print("login...")
 I_want_money=IQ_Option("email","password")
@@ -456,7 +456,7 @@ an other way to fix that(implement by get_betinfo)
 input by int
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 I_want_money=IQ_Option("email","password")
 check,id = I_want_money.buy(1, "EURUSD", "call", 1)
 print("start check win please wait")
@@ -479,7 +479,7 @@ I_want_money.get_all_init()
 
 sample 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 print("login...")
 I_want_money=IQ_Option("email","password")
 d=I_want_money.get_binary_option_detail()
@@ -490,7 +490,7 @@ print(d["CADCHF"]["binary"])
 #### get all profit
 sample 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 print("login...")
 I_want_money=IQ_Option("email","password")
 d=I_want_money.get_all_profit()
@@ -539,7 +539,7 @@ you can get the option by this function
 
 ```python
 import time
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 I_want_money=IQ_Option("email","password")
 while True:
     #please open website iqoption and buy some binary option
@@ -563,7 +563,7 @@ ___
 #### Sample
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 import time
 import random
 I_want_money=IQ_Option("email","password")
@@ -629,7 +629,7 @@ else:
 ##### sample
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 import time
 I_want_money=IQ_Option("email","password")
 ACTIVES="EURUSD"
@@ -648,7 +648,7 @@ I_want_money.unsubscribe_strike_list(ACTIVES,duration)
 buy the digit in current price
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
  
 I_want_money=IQ_Option("email","password")
 
@@ -664,7 +664,7 @@ print(I_want_money.buy_digital_spot(ACTIVES,amount,action,duration))
 get Profit After Sale(P/L)
 ![](image/profit_after_sale.png)
 ```python
-from iqoptionapi.stable_api import IQ_Option 
+from binarybotapi.stable_api import IQ_Option 
 I_want_money=IQ_Option("email","passord")
 ACTIVES="EURUSD"
 duration=1#minute 1 or 5
@@ -687,7 +687,7 @@ get current price profit
 
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 import time
 import logging
 #logging.basicConfig(level=logging.DEBUG,format='%(asctime)s %(message)s')
@@ -738,7 +738,7 @@ I_want_money.check_win_digital_v2(id)#get the id from I_want_money.buy_digital
 sample code
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 import logging
 import random
 import time
@@ -776,7 +776,7 @@ I_want_money.close_digital_option(id)
 ##### sample1
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 import logging
 import time
 #logging.basicConfig(level=logging.DEBUG,format='%(asctime)s %(message)s')
@@ -825,7 +825,7 @@ you can search instrument_type and instrument_id from this file
 
 #### Sample
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 I_want_money=IQ_Option("email","password")
 
 instrument_type="crypto"
@@ -1034,7 +1034,7 @@ instrument_type="crypto","forex","fx-option","turbo-option","multi-option","cfd"
 get_position_history_v2(instrument_type,limit,offset,start,end)
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 import logging
 import random
 import time
@@ -1139,7 +1139,7 @@ I_want_money.get_candles(ACTIVES,interval,count,endtime)
 :exclamation:
 try this code to get more than 1000 candle
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 import time
 I_want_money=IQ_Option("email","password")
 end_from_time=time.time()
@@ -1155,7 +1155,7 @@ print(ANS)
 
 ##### Sample 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 import logging
 import time
 #logging.basicConfig(level=logging.DEBUG,format='%(asctime)s %(message)s')
@@ -1238,7 +1238,7 @@ while True:
 instrument_type="binary-option"/"digital-option"/"forex"/"cfd"/"crypto"
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 import logging
 import time
 #logging.basicConfig(level=logging.DEBUG,format='%(asctime)s %(message)s')
@@ -1262,7 +1262,7 @@ https://github.com/Lu-Yi-Hsun/iqoptionapi/issues/131
 ![](https://user-images.githubusercontent.com/7738916/66943816-c9ee1380-f000-11e9-996e-e06efba64101.png)
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 import logging
 import time
 import operator
@@ -1313,7 +1313,7 @@ for now... only support get binary option mood , i will implement beterr if need
 Sample
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 I_want_money=IQ_Option("email","password")
 goal="EURUSD"
 I_want_money.start_mood_stream(goal)
@@ -1353,7 +1353,7 @@ I_want_money.get_balance()
 reset practice balance to $10000
 
 ```python
-from iqoptionapi.stable_api import IQ_Option
+from binarybotapi.stable_api import IQ_Option
 I_want_money=IQ_Option("email","password")
 print(I_want_money.reset_practice_balance())
 ```
