@@ -6,7 +6,7 @@ import setuptools
 
 setuptools.setup(
     name="binarybotapi",
-    version="0.0.7",
+    version="0.0.8",
     author="Vishal Bhadade",
     author_email="vishal.bhadade@gmail.com",
     description="Binary Option API for IQOption in python",
