@@ -274,30 +274,38 @@ class IQ_Option:
                                     OPEN_TIME[option][name]["open"] = active.get("enabled")
 
         # for digital
-        digital_data = self.get_digital_underlying_list_data()["underlying"]
-        for digital in digital_data:
-            name = digital["underlying"]
-            schedule = digital["schedule"]
-            OPEN_TIME["digital"][name]["open"] = False
-            for schedule_time in schedule:
-                start = schedule_time["open"]
-                end = schedule_time["close"]
-                if start < time.time() < end:
-                    OPEN_TIME["digital"][name]["open"] = True
+        digData = self.get_digital_underlying_list_data()
+        if digData is not None:
+            digital_data = digData.get("underlying")
+            if digital_data is not None:
+                for digital in digital_data:
+                    name = digital.get("underlying")
+                    schedule = digital.get("schedule")
+                    OPEN_TIME["digital"][name]["open"] = False
+                    for schedule_time in schedule:
+                        if schedule_time is not None:
+                            start = schedule_time.get("open")
+                            end = schedule_time.get("close")
+                            if start < time.time() < end:
+                                OPEN_TIME["digital"][name]["open"] = True
 
         # for OTHER
         instrument_list = ["cfd", "forex", "crypto"]
         for instruments_type in instrument_list:
-            ins_data = self.get_instruments(instruments_type)["instruments"]
-            for detail in ins_data:
-                name = detail["name"]
-                schedule = detail["schedule"]
-                OPEN_TIME[instruments_type][name]["open"] = False
-                for schedule_time in schedule:
-                    start = schedule_time["open"]
-                    end = schedule_time["close"]
-                    if start < time.time() < end:
-                        OPEN_TIME[instruments_type][name]["open"] = True
+            instrumentData = self.get_instruments(instruments_type)
+            if instrumentData is not None:
+                ins_data = instrumentData.get("instruments")
+                for detail in ins_data:
+                    if detail is not None:
+                        name = detail.get("name")
+                        schedule = detail.get("schedule")
+                        OPEN_TIME[instruments_type][name]["open"] = False
+                        for schedule_time in schedule:
+                            if schedule_time is not None:
+                                start = schedule_time.get("open")
+                                end = schedule_time.get("close")
+                                if start < time.time() < end:
+                                    OPEN_TIME[instruments_type][name]["open"] = True
 
         return OPEN_TIME
 
