@@ -1450,7 +1450,7 @@ class IQ_Option:
     def get_trade_result(self):
         while True:
             if self.api.resultInfo is None:
-                print("Checking result")
+                # print("Checking result")
                 time.sleep(0.2)
                 continue
             else:
