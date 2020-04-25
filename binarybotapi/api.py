@@ -511,28 +511,29 @@ class IQOptionAPI(object):  # pylint: disable=too-many-instance-attributes
             }
         self.send_websocket_request(name="sendMessage",msg=msg,request_id=str(request_id))
 
-    def draw_horizontal_line(self, x, y, request_id):
+    def draw_horizontal_line(self, x, y, activeId):
+        name = "drawings-asset-{0:}".format(activeId)
         msg = {"name": "set-user-settings",
                "version": "1.0",
                "body": {
-                   "name": "drawings-asset-5",
+                   "name": name,
                    "version": 3,
                    "config": {
-                       "data":[
+                       "data": [
                            {
-                               "key":"",
-                               "id":0,
-                               "figures":[
+                               "key": "",
+                               "id": 0,
+                               "figures": [
                                    {
-                                       "t":3,
-                                       "w":1.0,
-                                       "color":393985535,
-                                       "hide":0,
-                                       "lock":0,
-                                       "p":[
+                                       "t": 3,
+                                       "w": 1.0,
+                                       "color": 393985535,
+                                       "hide": 0,
+                                       "lock": 0,
+                                       "p": [
                                            {
-                                               "x":x,
-                                               "y":y
+                                               "x": x,
+                                               "y": y
                                            }
                                        ]
                                    }
@@ -541,7 +542,7 @@ class IQOptionAPI(object):  # pylint: disable=too-many-instance-attributes
                        ]
                    }
                }
-        }
+               }
         self.send_websocket_request(name="sendMessage", msg=msg, request_id=str(request_id))
 
     def subscribe_position_changed(self, name, instrument_type, request_id):
