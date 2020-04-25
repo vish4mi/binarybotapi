@@ -1448,10 +1448,15 @@ class IQ_Option:
         return self.api.users_availability
 
     def get_trade_result(self):
+        startTime = int(time.time()) % 60
         while True:
-            if self.api.resultInfo is None:
-                # print("Checking result")
-                time.sleep(0.2)
-                continue
+            nowTime = int(time.time()) % 60
+            if nowTime - startTime > 70:
+                return {"win": "loose"}
             else:
-                return self.api.resultInfo
+                if self.api.resultInfo is None:
+                    # print("Checking result")
+                    time.sleep(0.2)
+                    continue
+                else:
+                    return self.api.resultInfo
