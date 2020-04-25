@@ -1460,3 +1460,6 @@ class IQ_Option:
                     continue
                 else:
                     return self.api.resultInfo
+
+    def drawSupResLine(self, xTime, yPrice):
+        self.api.draw_horizontal_line(xTime, yPrice)
