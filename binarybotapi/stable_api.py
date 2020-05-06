@@ -241,9 +241,10 @@ class IQ_Option:
         self.api.get_api_option_init_all_v2()
         start_t = time.time()
         while self.api.api_option_init_all_result_v2 == None:
-            if time.time() - start_t >= 30:
-                logging.error('**warning** get_all_init_v2 late 30 sec')
-                return None
+            pass
+            # if time.time() - start_t >= 30:
+            #     logging.error('**warning** get_all_init_v2 late 30 sec')
+            #     return None
         return self.api.api_option_init_all_result_v2
 
         # return OP_code.ACTIVES
@@ -845,9 +846,9 @@ class IQ_Option:
                 id = self.api.buy_multi_option[req_id]["id"]
             except:
                 pass
-            if time.time() - start_t >= 5:
-                logging.error('**warning** buy late 5 sec')
-                return False, None
+            # if time.time() - start_t >= 5:
+            #     logging.error('**warning** buy late 5 sec')
+            #     return False, None
 
         return self.api.result, self.api.buy_multi_option[req_id]["id"]
 
@@ -865,10 +866,11 @@ class IQ_Option:
         self.api.get_digital_underlying()
         start_t = time.time()
         while self.api.underlying_list_data == None:
-            if time.time() - start_t >= 30:
-                logging.error(
-                    '**warning** get_digital_underlying_list_data late 30 sec')
-                return None
+            pass
+            # if time.time() - start_t >= 30:
+            #     logging.error(
+            #         '**warning** get_digital_underlying_list_data late 30 sec')
+            #     return None
 
         return self.api.underlying_list_data
 
@@ -1090,9 +1092,10 @@ class IQ_Option:
         self.api.place_digital_option(instrument_id, amount)
         start_t = time.time()
         while self.api.digital_option_placed_id == None:
-            if time.time() - start_t > 30:
-                logging.error('buy_digital loss digital_option_placed_id')
-                return False, None
+            pass
+            # if time.time() - start_t > 30:
+            #     logging.error('buy_digital loss digital_option_placed_id')
+            #     return False, None
         return True, self.api.digital_option_placed_id
 
     def close_digital_option(self, position_id):
