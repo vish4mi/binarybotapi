@@ -815,9 +815,9 @@ class IQ_Option:
                 id = self.api.buy_multi_option[req_id]["id"]
             except:
                 pass
-            if time.time() - start_t >= 5:
-                logging.error('**warning** buy late 5 sec')
-                return False, None
+            # if time.time() - start_t >= 5:
+            #     logging.error('**warning** buy late 5 sec')
+            #     return False, None
 
         return self.api.result, self.api.buy_multi_option[req_id]["id"]
 
