@@ -1449,9 +1449,9 @@ class IQ_Option:
         return self.api.users_availability
 
     def get_trade_result(self):
-        startTime = int(time.time()) % 60
+        startTime = int(time.time())
         while True:
-            nowTime = int(time.time()) % 60
+            nowTime = int(time.time())
             if nowTime - startTime > 70:
                 return {"win": "loose"}
             else:
