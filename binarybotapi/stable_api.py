@@ -1452,7 +1452,7 @@ class IQ_Option:
         startTime = int(time.time())
         while True:
             nowTime = int(time.time())
-            if nowTime - startTime > 70:
+            if nowTime - startTime >= 60:
                 return {"win": "loose"}
             else:
                 if self.api.resultInfo is None:
