@@ -1460,7 +1460,7 @@ class IQ_Option:
         while True:
             nowTime = int(time.time())
             if nowTime - startTime >= 60:
-                return {"win": "loose"}
+                return {"win": "loose", "profit_amount":0}
             else:
                 if self.api.resultInfo is None:
                     # print("Checking result")
