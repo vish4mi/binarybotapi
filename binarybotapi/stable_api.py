@@ -1471,3 +1471,17 @@ class IQ_Option:
 
     def drawSupResLine(self, time, price, activeId):
         self.api.draw_horizontal_line(time, price, activeId)
+
+    def tradeBuy(self, price, ACTIVE, ACTION, expiration):
+        self.api.resultInfo = None
+        self.api.tradeId = None
+        self.api.tradeStatus = None
+        req_id = "buy"
+        self.api.buyv3(price, OP_code.ACTIVES[ACTIVES], ACTION, expirations, req_id)
+        start_t = time.time()
+        self.api.result = None
+        while self.api.tradeStatus == None and self.api.tradeId == None:
+            if time.time() - start_t >= 30:
+                logging.error('**warning** buy late 5 sec')
+                return False, None
+        return self.api.tradeStatus, self.api.tradeId

@@ -154,8 +154,10 @@ class WebsocketClient(object):
            for get_m in message["msg"]:
                self.api.listinfodata.set(get_m["win"],get_m["game_state"],get_m["id"])
         elif message["name"] == "socket-option-opened":
-            id=message["msg"]["id"]
-            self.api.socket_option_opened[id]=message
+            id = message["msg"]["id"]
+            self.api.socket_option_opened[id] = message
+            self.api.tradeId = id
+            self.api.tradeStatus = True
              
         elif message["name"] == "api_option_init_all_result":
             self.api.api_option_init_all_result = message["msg"]
