@@ -1499,3 +1499,28 @@ class IQ_Option:
                 logging.error('**warning** buy late 5 sec')
                 return False, None
         return self.api.tradeStatus, self.api.tradeId
+
+    def get_all_open_times(self):
+        # for binary option turbo and binary
+        OPEN_TIME = nested_dict(3, dict)
+        binary_data = self.get_all_init_v2()
+        binary_list = ["binary", "turbo"]
+        for option in binary_list:
+            if binary_data is not None:
+                binaryOptionData = binary_data.get(option)
+                if binaryOptionData is not None:
+                    for actives_id in binaryOptionData.get("actives"):
+                        active = binaryOptionData.get("actives").get(actives_id)
+                        if active is not None:
+                            dottedName = str(active.get("name"))
+                            if dottedName is not None:
+                                name = dottedName.split(".")[1]
+                                if active.get("enabled"):
+                                    if active.get("is_suspended"):
+                                        OPEN_TIME[option][name]["open"] = False
+                                    else:
+                                        OPEN_TIME[option][name]["open"] = True
+                                else:
+                                    OPEN_TIME[option][name]["open"] = active.get("enabled")
+
+        return OPEN_TIME
