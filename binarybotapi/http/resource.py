@@ -8,7 +8,7 @@ class Resource(object):
     def __init__(self, api):
         """
         :param api: The instance of :class:`IQOptionAPI
-            <binarybotapi.api.IQOptionAPI>`.
+            <iqoptionapi.api.IQOptionAPI>`.
         """
         self.api = api
 

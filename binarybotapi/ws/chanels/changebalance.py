@@ -2,6 +2,8 @@
 import datetime
 
 from binarybotapi.ws.chanels.base import Base
+
+
 class Changebalance(Base):
     """Class for IQ option buy websocket chanel."""
     # pylint: disable=too-few-public-methods
@@ -16,10 +18,9 @@ class Changebalance(Base):
         :param option: The buying option.
         :param direction: The buying direction.
         """
-     
 
         data = {
-            "balance_id":balance_id
+            "balance_id": balance_id
         }
 
         self.send_websocket_request(self.name, data)
